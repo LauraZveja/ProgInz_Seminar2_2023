@@ -53,6 +53,7 @@ public class Course {
 	private Professor professor;
 	
 	@OneToMany(mappedBy = "course") //mapē uz mainīgo
+	@ToString.Exclude
 	private Collection<Grade> grades;
 
 	public Course(

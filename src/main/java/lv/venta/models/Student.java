@@ -54,6 +54,7 @@ public class Student {
 	
 	
 	@OneToMany(mappedBy = "student") //mapē uz mainīgo
+	@ToString.Exclude
 	private Collection<Grade> grades;
 
 	public Student(String name, String surname, Programme programme) {

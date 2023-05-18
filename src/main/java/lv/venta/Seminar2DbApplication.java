@@ -53,6 +53,8 @@ public class Seminar2DbApplication {
 				
 				//TODO izveidot jaunu zaru un pāriet uz to (git branch xxxx, git checkout xxx)
 				//TODO jaunajā zarā pārveidot saiti starp profesoru un kursu uz ManyToMany
+				//TODO pamainīt testModel funkciju, lai notestētu. Ieliekot katram pasniedzējam 2 kursus un
+				//katram kursam divus pasniedzējus
 				
 				
 				

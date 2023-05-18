@@ -1,10 +1,14 @@
 package lv.venta.models;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
@@ -50,9 +54,9 @@ public class Professor {
 	@NotNull
 	private Degree degree;
 	
-	@OneToOne(mappedBy = "professor") // sasaiste ar mainīgo
+	@ManyToMany(mappedBy = "professors") // sasaiste ar mainīgo
 	@ToString.Exclude
-	private Course course;
+	private Collection<Course> courses = new ArrayList<>();
 
 	public Professor(String name, String surname, Degree degree) {
 		

@@ -54,8 +54,17 @@ public class Course {
 	
 	@OneToMany(mappedBy = "course") //mapē uz mainīgo
 	private Collection<Grade> grades;
+
+	public Course(
+			@Size(min = 3, max = 25) @NotNull @Pattern(regexp = "[A-ZĒŪĻĶ]{1}[a-zēūļķ]+", message = "Pirmajam burtam jābūt lielajam") String title,
+			@NotNull @Min(1) @Max(20) int creditPoints, Professor professor) {
+		
+		this.title = title;
+		this.creditPoints = creditPoints;
+		this.professor = professor;
+	}
 	
-	//TODO jāizveido konstruktors, kad būs saite starp profesoru un kursu
+	
 	
 
 }

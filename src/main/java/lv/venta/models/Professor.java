@@ -47,7 +47,7 @@ public class Professor {
 	private String surname;
 	
 	@Column(name = "Degree")
-	@NotBlank
+	@NotNull
 	private Degree degree;
 	
 	@OneToOne(mappedBy = "professor") // sasaiste ar mainīgo

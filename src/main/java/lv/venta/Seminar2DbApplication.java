@@ -40,8 +40,8 @@ public class Seminar2DbApplication {
 				stRepo.save(st1);
 				stRepo.save(st2);
 				
-				Course c1 = new Course("JAVA I", 4, pr1);
-				Course c2 = new Course("Datubazes I", 4, pr2);
+				Course c1 = new Course("Java", 4, pr1);
+				Course c2 = new Course("Datubazes", 4, pr2);
 				courRepo.save(c1);
 				courRepo.save(c2);
 				
@@ -50,6 +50,11 @@ public class Seminar2DbApplication {
 				
 				grrepo.save(new Grade(8, st2, c1)); //Baiba nopelnīja 8 JAVA
 				grrepo.save(new Grade(10, st2, c2));
+				
+				//TODO izveidot jaunu zaru un pāriet uz to (git branch xxxx, git checkout xxx)
+				//TODO jaunajā zarā pārveidot saiti starp profesoru un kursu uz ManyToMany
+				
+				
 				
 			}
 		};

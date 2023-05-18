@@ -49,7 +49,7 @@ public class Student {
 	private String surname;
 	
 	@Column(name = "Programme")
-	@NotBlank
+	@NotNull
 	private Programme programme;
 	
 	

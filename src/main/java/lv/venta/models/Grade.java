@@ -40,6 +40,10 @@ public class Grade {
 	@JoinColumn(name = "Ids")
 	private Student student;
 	
+	@ManyToOne
+	@JoinColumn(name = "Idc") //otrās klases primary key
+	private Course course;
+	
 	//TODO izveidot konstruktoru, kad būs sasaiste ar citām klasēm
 
 }

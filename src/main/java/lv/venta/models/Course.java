@@ -6,7 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -16,47 +17,33 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Table(name = "professor_table")
+@Table(name = "course_table")
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
-public class Professor {
+public class Course {
 	
-	
-	//TODO uzlikt Data JPA anotācijas
-	//TODO uzlikt atbilstošās validāciju anotācijas
-	//TODO izveidot Student, Course, Grade
 	@Setter(value = AccessLevel.NONE)
-	@Column(name = "Idp")
+	@Column(name = "Idc")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idp;
+	private long idc;
 	
-	@Column(name = "Name")
-	@Size(min = 3, max =15)
+	@Column(name = "Title")
+	@Size(min = 3, max =25)
 	@NotNull
 	@Pattern(regexp = "[A-ZĒŪĻĶ]{1}[a-zēūļķ]+", message = "Pirmajam burtam jābūt lielajam")
-	private String name;
+	private String title;
 	
-	@Column(name = "Surname")
-	@Pattern(regexp = "[A-ZĒŪĻĶ]{1}[a-zēūļķ]+", message = "Pirmajam burtam jābūt lielajam")
+	@Column(name = "CreditPoints")
 	@NotNull
-	private String surname;
+	@Min(value = 1)
+	@Max(value = 20)
+	private int creditPoints;
 	
-	@Column(name = "Degree")
-	@NotBlank
-	private Degree degree;
-
-	public Professor(String name, String surname, Degree degree) {
-		
-		this.name = name;
-		this.surname = surname;
-		this.degree = degree;
-	}
-	
-	
+	//TODO jāizveido konstruktors, kad būs saite starp profesoru un kursu
 	
 
 }

@@ -16,23 +16,23 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Table(name = "professor_table")
+@Table(name = "student_table")
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
-public class Professor {
+public class Student {
 	
 	
 	//TODO uzlikt Data JPA anotācijas
 	//TODO uzlikt atbilstošās validāciju anotācijas
 	//TODO izveidot Student, Course, Grade
 	@Setter(value = AccessLevel.NONE)
-	@Column(name = "Idp")
+	@Column(name = "Ids")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idp;
+	private long ids;
 	
 	@Column(name = "Name")
 	@Size(min = 3, max =15)
@@ -45,15 +45,15 @@ public class Professor {
 	@NotNull
 	private String surname;
 	
-	@Column(name = "Degree")
+	@Column(name = "Programme")
 	@NotBlank
-	private Degree degree;
+	private Programme programme;
 
-	public Professor(String name, String surname, Degree degree) {
+	public Student(String name, String surname, Programme programme) {
 		
 		this.name = name;
 		this.surname = surname;
-		this.degree = degree;
+		this.programme = programme;
 	}
 	
 	

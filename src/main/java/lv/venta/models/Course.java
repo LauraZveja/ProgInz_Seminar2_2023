@@ -72,6 +72,12 @@ public class Course {
 	}
 	
 	
+	public void addProfessor(Professor inputProfessor) {
+		if(!professors.contains(inputProfessor)) {
+			professors.add(inputProfessor);
+		}
+	}
+	
 	
 
 }

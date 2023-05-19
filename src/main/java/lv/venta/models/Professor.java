@@ -56,13 +56,20 @@ public class Professor {
 	
 	@ManyToMany(mappedBy = "professors") // sasaiste ar mainīgo
 	@ToString.Exclude
-	private Collection<Course> courses = new ArrayList<>();
+	private Collection<Course> courses = new ArrayList<>(); //tikai many to many gadījumā vajag inicializēt Collection
 
 	public Professor(String name, String surname, Degree degree) {
 		
 		this.name = name;
 		this.surname = surname;
 		this.degree = degree;
+	}
+	
+	
+	public void addCourse(Course inputCourse) {
+		if(!courses.contains(inputCourse)) {
+			courses.add(inputCourse);
+		}
 	}
 	
 	

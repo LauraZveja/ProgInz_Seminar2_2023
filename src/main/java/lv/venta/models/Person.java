@@ -39,4 +39,15 @@ public class Person {
 	@NotNull
 	private String surname;
 
+	public Person(
+			@Size(min = 3, max = 15) @NotNull @Pattern(regexp = "[A-ZĒŪĻĶ]{1}[a-zēūļķ]+", message = "Pirmajam burtam jābūt lielajam") String name,
+			@Pattern(regexp = "[A-ZĒŪĻĶ]{1}[a-zēūļķ]+", message = "Pirmajam burtam jābūt lielajam") @NotNull String surname) {
+		super();
+		this.name = name;
+		this.surname = surname;
+	}
+	
+	
+	
+
 }

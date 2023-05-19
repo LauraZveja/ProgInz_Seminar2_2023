@@ -25,28 +25,8 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Student {
+public class Student extends Person{
 	
-	
-	//TODO uzlikt Data JPA anotācijas
-	//TODO uzlikt atbilstošās validāciju anotācijas
-	//TODO izveidot Student, Course, Grade
-	@Setter(value = AccessLevel.NONE)
-	@Column(name = "Ids")
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long ids;
-	
-	@Column(name = "Name")
-	@Size(min = 3, max =15)
-	@NotNull
-	@Pattern(regexp = "[A-ZĒŪĻĶ]{1}[a-zēūļķ]+", message = "Pirmajam burtam jābūt lielajam")
-	private String name;
-	
-	@Column(name = "Surname")
-	@Pattern(regexp = "[A-ZĒŪĻĶ]{1}[a-zēūļķ]+", message = "Pirmajam burtam jābūt lielajam")
-	@NotNull
-	private String surname;
 	
 	@Column(name = "Programme")
 	@NotNull
@@ -59,8 +39,7 @@ public class Student {
 
 	public Student(String name, String surname, Programme programme) {
 		
-		this.name = name;
-		this.surname = surname;
+		super(name, surname);
 		this.programme = programme;
 	}
 	

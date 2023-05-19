@@ -73,6 +73,6 @@ public class Professor {
 	}
 	
 	
-	
+	//TODO izveidot dzēšanas funkciju
 
 }

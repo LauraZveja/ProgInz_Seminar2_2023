@@ -64,11 +64,11 @@ public class Course {
 
 	public Course(
 			@Size(min = 3, max = 25) @NotNull @Pattern(regexp = "[A-ZĒŪĻĶ]{1}[a-zēūļķ]+", message = "Pirmajam burtam jābūt lielajam") String title,
-			@NotNull @Min(1) @Max(20) int creditPoints, Professor professor) {
+			@NotNull @Min(1) @Max(20) int creditPoints, ArrayList<Professor> professors) {
 		
 		this.title = title;
 		this.creditPoints = creditPoints;
-		//this.professor = professor;
+		this.professors = professors;
 	}
 	
 	
@@ -76,6 +76,11 @@ public class Course {
 		if(!professors.contains(inputProfessor)) {
 			professors.add(inputProfessor);
 		}
+		
+		//TODO, izveidot dzēšanas funkciju
+		
+		
+		
 	}
 	
 	
